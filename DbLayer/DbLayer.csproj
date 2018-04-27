@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\..\..\Models\Lesson.cs" Link="Models\Lesson.cs" />
+    <Compile Include="..\..\..\..\..\Models\Sgroup.cs" Link="Models\Sgroup.cs" />
+    <Compile Include="..\..\..\..\..\Models\Ssubject.cs" Link="Models\Ssubject.cs" />
+    <Compile Include="..\..\..\..\..\Models\Student.cs" Link="Models\Student.cs" />
+    <Compile Include="..\..\..\..\..\Models\SundayTimeTableContext.cs" Link="Models\SundayTimeTableContext.cs" />
+    <Compile Include="..\..\..\..\..\Models\Teacher.cs" Link="Models\Teacher.cs" />
+    <Compile Include="..\..\..\..\..\Models\TeacherInSubject.cs" Link="Models\TeacherInSubject.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFCoreGenericRepository\EFCoreGenericRepository.csproj" />
+  </ItemGroup>
+
+</Project>

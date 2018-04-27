@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DbLayer.TeacherInSubject>
+
+@{
+    ViewData["Title"] = "TeacherInSubject";
+}
+
+<h2>TeacherInSubject</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssubject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssubject.SsubjectName)
+            </td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Teacher.FirstName)
+				@Html.DisplayFor(modelItem => item.Teacher.LastName)
+			</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TeacherInSubjectId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TeacherInSubjectId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TeacherInSubjectId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

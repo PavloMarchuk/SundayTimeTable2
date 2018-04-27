@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DbLayer.Lesson>
+
+@{
+    ViewData["Title"] = "Lessons";
+}
+
+<h2>Lessons</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LessonDatetime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cabinet)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sgroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssubject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LessonDatetime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cabinet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sgroup.SgroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssubject.SsubjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teacher.FirstName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LessonId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LessonId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LessonId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
